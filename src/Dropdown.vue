@@ -59,16 +59,27 @@
         required: false,
         default: 6,
         note: 'Max items showing'
+      },
+      default: {
+        type: Object,
+        required: false,
+          default: () => ({}),
+        note: 'Selected item'
       }
     },
     data() {
       return {
-        selected: {},
         optionsShown: false,
         searchFilter: ''
       }
     },
     created() {
+      if(this.default) {
+        this.selectOption(this.default);
+
+        return;
+      }
+
       this.$emit('selected', this.selected);
     },
     computed: {

@@ -2,7 +2,7 @@
   <head>
     <title>Vue.js search dropdown component - example</title>
     <script type="text/javascript" src="https://unpkg.com/vue@latest"></script>
-    <script type="text/javascript" src="https://unpkg.com/vue-simple-search-dropdown@latest/dist/vue-simple-search-dropdown.min.js"></script>
+    <script type="text/javascript" src="../dist/vue-simple-search-dropdown.min.js"></script>
     <style type="text/css">
       body {
         font-family: Arial, Helvetica, sans-serif;
@@ -27,6 +27,7 @@
         v-on:selected="validateSelection"
         v-on:filter="getDropdownValues"
         :disabled="false"
+        :default="{ name: 'Cat', id: 'cat' }"
         placeholder="Please select an animal">
       </Dropdown>
       <p>Selected animal: {{ selected.name || 'none' }}</p>
@@ -46,7 +47,8 @@
               { name: 'Girafe', id: 'girafe' },
               { name: 'Snake', id: 'snake' },
               { name: 'Spider', id: 'spider' },
-              { name: 'Unicorn', id: 'unicorn' }              
+              { name: 'Unicorn', id: 'unicorn' },
+              { name: 'Tab', id: 'tab' }              
             ],
             selected: { name: null, id: null }
           }
